@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucerna Store</title>
+    <!-- Scripts de carga de Lottie Files -->
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        const lottieContainer = document.getElementById("lottie-container");
+        
+        setTimeout(() => {
+          preloader.style.opacity = "0"; // Cambia la opacidad para la transición
+          lottieContainer.style.opacity = "0"; // Añade opacidad al contenedor Lottie
+          
+          setTimeout(() => {
+            preloader.style.display = "none"; // Oculta el preloader después de la transición
+            lottieContainer.style.display = "none"; // Oculta el contenedor Lottie
+          }, 500); // Espera 500 ms para completar la transición de salida
+        }, 250); // Puedes ajustar este tiempo de carga
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js"></script>
+
+    <!-- CSS y otros recursos -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.cdnfonts.com/css/quesha" rel="stylesheet">
+                
+    <!-- Incluye íconos de Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-dOi7gTp1hQzq5GrG5xWkDpmyu5klw6A5EUTDycVpFkRvHqKp3SDoRAe5V64u2RPQ+TCA1jGVZf5R4UuR2P4nvA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <style>
+      /* Estilos para el contenedor de la animación y el texto */
+      #lottie-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+        background-color: #01fffb84;
+        backdrop-filter: blur(25px);
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      }
+    
+      /* Estilo para el contenedor de la animación */
+      #lottie-animation {
+        width: 100px; /* Ajusta el tamaño según necesites */
+        height: 100px;
+        background-color: transparent; /* O el fondo necesario */
+      }
+    
+      /* Estilos para el texto debajo de la animación */
+      h2 {
+        margin-top: 0px; /* Espacio entre la animación y el texto */
+        color: #333;
+        font-size: clamp(2em, 2vw, 2em);
+        text-align: center;
+      }
+    </style>
+    
+    <div id="preloader"></div>
+    <div id="lottie-container">
+      <div id="lottie-animation"></div>
+      <h2>Cargando...</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js"></script>
+    <script>
+      // Carga la animación Lottie
+      lottie.loadAnimation({
+        container: document.getElementById('lottie-container'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: {"nm":"Untitled file","ddd":0,"h":500,"w":500,"meta":{"g":"@lottiefiles/creator 1.12.0"},"layers":[{"ty":0,"nm":"Nested Scene 1","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[229.97041308334371,236.7390482138473]},"s":{"a":0,"k":[100,97.84119877161447]},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.55,"y":0.06},"i":{"x":1,"y":1},"s":[264.2335,241.7439],"t":0},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[264.2335,169.6095],"t":20},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[264.2335,282.6095],"t":45},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[264.2335,190.6095],"t":68},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[264.2335,247.6095],"t":87},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[263.2454,165.6095],"t":108},{"o":{"x":0.65,"y":0},"i":{"x":0.36,"y":1},"s":[264.2335,263.6095],"t":124},{"s":[264.2335,241.7439],"t":147}]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"w":500,"h":500,"refId":"precomp_newScene_24dede72-b5ed-4caa-a0fa-3f7be1479c75","ind":1}],"v":"5.7.0","fr":30,"op":150,"ip":0,"assets":[{"nm":"Nested Scene 1","id":"precomp_newScene_24dede72-b5ed-4caa-a0fa-3f7be1479c75","layers":[{"ty":4,"nm":"Ellipse 8","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[100,100]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[274.5184,213.6603]},"r":{"a":0,"k":30},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 8","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[70.05253940455341,98.07355516637477]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0.6902,0.6902,0.6902]},"r":2,"o":{"a":0,"k":42}}],"ind":1},{"ty":4,"nm":"Path 6","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[158.90717315673828,204.02801513671875]},"s":{"a":0,"k":[89.97191307842873,103.57142942778947]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[158.0315,202.2767]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"sh","bm":0,"hd":false,"nm":"PATH Shape Path 6","d":1,"ks":{"a":0,"k":{"c":true,"i":[[2.626970227670739,0.8756567425569131],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[165.93695271453586,227.6707530647986],[164.18563922942207,207.53064798598948],[156.30472854640976,180.38528896672503],[151.05078809106828,187.39054290718036],[156.30472854640976,187.39054290718036],[164.18563922942207,207.53064798598948]]}}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}},{"ty":"st","bm":0,"hd":false,"nm":"Stroke","lc":2,"lj":2,"ml":1,"o":{"a":0,"k":100},"w":{"a":0,"k":4},"c":{"a":0,"k":[0,0,0]}}],"ind":2},{"ty":4,"nm":"Path 5","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[193.5201416015625,201.4010467529297]},"s":{"a":0,"k":[100,100]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[197.5201,201.401]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"sh","bm":0,"hd":false,"nm":"PATH Shape Path 5","d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],"v":[[202.71453590192644,227.6707530647986],[200.96322241681258,208.4063047285464],[190.45534150612957,175.13134851138352],[184.32574430823118,180.38528896672503],[193.08231173380037,183.0122591943958],[201.83887915936955,208.4063047285464]]}}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}},{"ty":"st","bm":0,"hd":false,"nm":"Stroke","lc":2,"lj":2,"ml":1,"o":{"a":0,"k":100},"w":{"a":0,"k":4},"c":{"a":0,"k":[0,0,0]}}],"ind":3},{"ty":4,"nm":"Polygon 3","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[100,151.4856570779066]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[178.1961,266.7834]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"sr","bm":0,"hd":false,"nm":"Polygon Path 3","d":1,"pt":{"a":0,"k":3},"p":{"a":0,"k":[0,0]},"or":{"a":0,"k":12.133455127473509},"os":{"a":0,"k":0},"r":{"a":0,"k":180},"sy":2},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}}],"ind":4},{"ty":4,"nm":"Ellipse 2","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[61.7036852855534,79.69801520583637]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[207.4886,259.2049]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 2","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[11.383537653239927,10.507880910682985]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}}],"ind":5},{"ty":4,"nm":"Ellipse 2","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[61.7036852855534,79.69801520583637]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[151.4886,259.2049]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 2","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[11.383537653239927,10.507880910682985]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}}],"ind":6},{"ty":4,"nm":"Ellipse 1","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[100,100]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[193.5201,265.7618]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 1","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[111.20840630472858,112.95971978984241]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0.9843,0.7647,0.1725]},"r":2,"o":{"a":0,"k":100}}],"ind":7},{"ty":4,"nm":"Ellipse 1","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[100.67563395169464,100]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[204.9037,265.7618]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 1","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[111.20840630472858,112.95971978984241]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0,0,0]},"r":2,"o":{"a":0,"k":100}}],"ind":8},{"ty":4,"nm":"Ellipse 1","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[96.29887721387045,95.4198455800937]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[216.2872,266.6375]},"r":{"a":0,"k":0},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 1","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[111.20840630472858,112.95971978984241]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0.9843,0.7647,0.1725]},"r":2,"o":{"a":0,"k":100}}],"ind":9},{"ty":4,"nm":"Ellipse 9","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[100,100]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[175.5691,204.9037]},"r":{"a":0,"k":-15},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"el","bm":0,"hd":false,"nm":"Ellipse Path 9","d":1,"p":{"a":0,"k":[0,0]},"s":{"a":0,"k":[68.30122591943953,92.8196147110333]}},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0.6902,0.6902,0.6902]},"r":2,"o":{"a":0,"k":42}}],"ind":10},{"ty":4,"nm":"Polygon 7","sr":1,"st":0,"op":150,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[0,0]},"s":{"a":0,"k":[60.667275637367226,274.3724460011676]},"sk":{"a":0,"k":0},"p":{"a":0,"k":[273.6427,262.1133]},"r":{"a":0,"k":90},"sa":{"a":0,"k":0},"o":{"a":0,"k":100}},"shapes":[{"ty":"sr","bm":0,"hd":false,"nm":"Polygon Path 7","d":1,"pt":{"a":0,"k":3},"p":{"a":0,"k":[0,0]},"or":{"a":0,"k":10},"os":{"a":0,"k":0},"r":{"a":0,"k":0},"sy":2},{"ty":"fl","bm":0,"hd":false,"nm":"Fill","c":{"a":0,"k":[0.5843,0.5843,0.5843]},"r":2,"o":{"a":0,"k":100}}],"ind":11}]}]}
+      });
+    </script>
+  <body>
+
+    <header>
+      <div class="header-container">
+        <a><img class="img-logo" src="img/logo.png" alt="logo" /></a>
+
+        <nav class="menu">
+          <a href="acerca.html">Acerca</a>
+          <a href="index.html">Productos</a>
+          <a href="blog.html">Blog</a>
+          <a href="#footer">Contacto</a>
+        </nav>
+        <div class="menu-icon" style="cursor: pointer">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="cart" style="cursor: pointer">
+          <i class="fas fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+    <div id="avisos">
+      <div class="swiper avisos-carrusel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/header1.jpeg" alt="Imagen 1"></div>
+          <div class="swiper-slide"><img src="img/header2.jpeg" alt="Imagen 2"></div>
+          <!--<div class="swiper-slide"><img src="img/3.jpeg" alt="Imagen 3"></div>-->
+          <!-- Más slides si es necesario -->
+        </div>
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <main>
+      
+    
+      </section>
+      <div class="compras">
+      <div id="titulo-P" class="titulos aparecer"><h2>Productos</h2></div>
+      <div ><h3 class="aparecer">Precios:</h3>
+        <section id="productos">
+          <div id="precio" class="producto-contenedor">
+            <img src="img/clasica.jpg" alt="Producto">
+            <div class="producto-texto">Presentación Clásica 200g</div>
+            <div class="producto-precio">Precio: $220 MX</div>
+          </div>
+          <div id="precio" class="producto-contenedor">
+            <img src="img/ambar.jpeg" alt="Producto">
+            <div class="producto-texto">Presentación Ámbar 200g</div>
+            <div class="producto-precio">Precio: $250 MX</div>
+          </div>
+
+        </section>
+        <h3><i id="flor" class="fas fa-spa"></i> 
+          Aromas florales <i id="flor" class="fas fa-spa"></i>
+        </h3>
+      </div>
+      <!-- SECCIÓN DE PRODUCTOS -->
+      <section id="productos">
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Lavanda</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+      </div>
+      
+      <div class="producto">
+        <div class="producto-carrusel">
+            <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+            <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+        </div>
+        <div class="navegacion">
+            <span class="punto activo" data-index="0"></span>
+            <span class="punto" data-index="1"></span>
+        </div>
+        <h3 class="producto-titulo">Jazmín</h3>
+        <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+        <select class="opciones">
+            <option value="220" data-precio="220">Clásica 200g - $220</option>
+            <option value="250" data-precio="250">Ámbar 200g - $250</option>
+        </select>
+        <p class="precio">Precio en pesos MX</p>
+        <button class="agregar-carrito">
+          <i class="fas fa-cart-plus"></i>
+          Agregar al carrito
+        </button>
+    </div>
+
+       <div class="producto">
+        <div class="producto-carrusel">
+            <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+            <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+        </div>
+        <div class="navegacion">
+            <span class="punto activo" data-index="0"></span>
+            <span class="punto" data-index="1"></span>
+        </div>
+        <h3 class="producto-titulo">Peonia</h3>
+        <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+        <select class="opciones">
+            <option value="220" data-precio="220">Clásica 200g - $220</option>
+            <option value="250" data-precio="250">Ámbar 200g - $250</option>
+        </select>
+        <p class="precio">Precio en pesos MX</p>
+        <button class="agregar-carrito">
+          <i class="fas fa-cart-plus"></i>
+          Agregar al carrito
+        </button>
+    </div>
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica-orquidea.png" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Orquídea Negra</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+      </div>
+      </section>
+
+      <div id="aromas-citricos">
+        <h3 class="aparecer">
+          <i id="citrico" class="fas fa-lemon orange-icon"></i> 
+          Aromas cítricos 
+          <i id="citrico" class="fas fa-lemon orange-icon"></i>
+        </h3>
+      </div>
+      
+      <section id="productos">
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/limon y romero.jpeg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar-limonyromero.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Limón y romero</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+      </div>
+
+      <div class="producto">
+        <div class="producto-carrusel">
+            <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+            <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+        </div>
+        <div class="navegacion">
+            <span class="punto activo" data-index="0"></span>
+            <span class="punto" data-index="1"></span>
+        </div>
+        <h3 class="producto-titulo">Citronela</h3>
+        <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+        <select class="opciones">
+            <option value="220" data-precio="220">Clásica 200g - $220</option>
+            <option value="250" data-precio="250">Ámbar 200g - $250</option>
+        </select>
+        <p class="precio">Precio en pesos MX</p>
+        <button class="agregar-carrito">
+          <i class="fas fa-cart-plus"></i>
+          Agregar al carrito
+        </button>
+    </div>
+        
+    <div class="producto">
+      <div class="producto-carrusel">
+          <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+          <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+      </div>
+      <div class="navegacion">
+          <span class="punto activo" data-index="0"></span>
+          <span class="punto" data-index="1"></span>
+      </div>
+      <h3 class="producto-titulo">Citrux delux</h3>
+      <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+      <select class="opciones">
+          <option value="220" data-precio="220">Clásica 200g - $220</option>
+          <option value="250" data-precio="250">Ámbar 200g - $250</option>
+      </select>
+      <p class="precio">Precio en pesos MX</p>
+      <button class="agregar-carrito">
+        <i class="fas fa-cart-plus"></i>
+        Agregar al carrito
+      </button>
+  </div>
+      
+  <div class="producto">
+    <div class="producto-carrusel">
+        <img class="producto-vela activo" src="img/clasica-toronja.jpg" alt="Vela Calabaza" />
+        <img class="producto-vela" src="img/clasica.jpg" alt="Vela Alternativa" />
+    </div>
+    <div class="navegacion">
+        <span class="punto activo" data-index="0"></span>
+        <span class="punto" data-index="1"></span>
+    </div>
+    <h3 class="producto-titulo">Toronja</h3>
+    <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+    <select class="opciones">
+        <option value="220" data-precio="220">Clásica 200g - $220</option>
+        <option value="250" data-precio="250">Ámbar 200g - $250</option>
+    </select>
+    <p class="precio">Precio en pesos MX</p>
+    <button class="agregar-carrito">
+      <i class="fas fa-cart-plus"></i>
+      Agregar al carrito
+    </button>
+</div>
+        
+<div class="producto">
+  <div class="producto-carrusel">
+      <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+      <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+  </div>
+  <div class="navegacion">
+      <span class="punto activo" data-index="0"></span>
+      <span class="punto" data-index="1"></span>
+  </div>
+  <h3 class="producto-titulo">Blue agave</h3>
+  <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+  <select class="opciones">
+      <option value="220" data-precio="220">Clásica 200g - $220</option>
+      <option value="250" data-precio="250">Ámbar 200g - $250</option>
+  </select>
+  <p class="precio">Precio en pesos MX</p>
+  <button class="agregar-carrito">
+    <i class="fas fa-cart-plus"></i>
+    Agregar al carrito
+  </button>
+</div>
+      </section>
+
+      <div ><h3 class="aparecer"><i class="fas fa-wine-glass-alt"></i> Aromas gourmet 
+        <i class="fas fa-concierge-bell"></i> 
+
+      </h3></div>
+      <section id="productos">
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Palo santo</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/vainilla-ambar.jpeg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/clasica.jpg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Vainilla</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica-champagneyfresa.jpeg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar-champagneyfresa.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Champagne y fresa</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Melón y sandía</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+        </div> 
+      </section>
+
+      <div>
+        <h3 class="aparecer"><i id="otono" class="fas fa-leaf"></i> 
+          Aromas de temporada 🎃
+        </h3>
+    </div>
+    
+      <section id="productos">
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Calabaza</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+      </div>
+
+        <div class="producto">
+          <div class="producto-carrusel">
+              <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+              <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+          </div>
+          <div class="navegacion">
+              <span class="punto activo" data-index="0"></span>
+              <span class="punto" data-index="1"></span>
+          </div>
+          <h3 class="producto-titulo">Cempasúchil</h3>
+          <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+          <select class="opciones">
+              <option value="220" data-precio="220">Clásica 200g - $220</option>
+              <option value="250" data-precio="250">Ámbar 200g - $250</option>
+          </select>
+          <p class="precio">Precio en pesos MX</p>
+          <button class="agregar-carrito">
+            <i class="fas fa-cart-plus"></i>
+            Agregar al carrito
+          </button>
+      </div>
+        
+      
+      <div class="producto">
+        <div class="producto-carrusel">
+            <img class="producto-vela activo" src="img/clasica.jpg" alt="Vela Calabaza" />
+            <img class="producto-vela" src="img/ambar.jpeg" alt="Vela Alternativa" />
+        </div>
+        <div class="navegacion">
+            <span class="punto activo" data-index="0"></span>
+            <span class="punto" data-index="1"></span>
+        </div>
+        <h3 class="producto-titulo">Calabaza y ron</h3>
+        <label for="opciones-calabaza">Selecciona el tamaño y precio:</label>
+        <select class="opciones">
+            <option value="220" data-precio="220">Clásica 200g - $220</option>
+            <option value="250" data-precio="250">Ámbar 200g - $250</option>
+        </select>
+        <p class="precio">Precio en pesos MX</p>
+        <button class="agregar-carrito">
+          <i class="fas fa-cart-plus"></i>
+          Agregar al carrito
+        </button>
+    </div>
+    
+  
+    
+    
+
+        
+      </section>
+  
+      <!-- Sección del carrito que estará oculta inicialmente -->
+      <section id="carrito" style="display: none">
+        <div class="header-carrito">
+          
+          <button id="cerrar">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h2 class="decorado">Tu Carrito</h2>
+          
+        </div>
+        
+        <p>Producto(s):</p>
+        <div id="lista-carrito">
+            <!-- Aquí se agregarán los productos seleccionados -->
+        </div>
+        <div id="total-compra">Total: $<span id="total">0</span></div>
+        
+        <br>
+        <!-- Campo para ingresar el número de teléfono o correo electrónico -->
+        <div id="contacto">
+            <label for="contacto-info">Ingresa tu teléfono o Email:</label>
+            <input type="text" id="contacto-info" name="contacto-info" placeholder="Teléfono o email" required 
+            pattern="(?:\d{10}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})" title="Ingresa un número de teléfono de 10 dígitos o un email válido">
+        </div>
+        <br>
+        <button id="checkout">
+          <i class="fas fa-paper-plane"></i> Realizar Pedido
+      </button>
+      <p>Precio en pesos MX</p>
+    
+    </section>
+    
+ <!-- FOOTER -->
+ <footer id="footer">
+  <div class="footer-container">
+    <div class="logo-blog">
+      
+      <img src="img/logoLetras.png" alt="Logo" class="logo">
+      
+    </div>
+      <div class="separator"></div>
+      <div class="footer-info">
+          <div class="social-media">
+            
+              <p class="redes">Siguenos:</p>
+              <a href="https://www.facebook.com/profile.php?id=61560361321815" class="social-icon" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <!--<a href="#" class="social-icon" title="X (Twitter)" target="_blank"><i class="fab fa-x"></i></a>-->
+              <a href="https://www.instagram.com/lucerna.ventas/" class="social-icon" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+          
+      </div>
+      <div>
+        <div class="contact">
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:venta.lucerna@gmail.com" target="_blank">
+              <b>venta.lucerna@gmail.com</b>
+          </a>
+          <p class="linea"></p>
+      </div>
+      <a href="blog.html">
+        <p class="blog">Blog</p>
+      </a>
+            <p class="linea"></p></div>
+      <div class="footer-copyright">
+        
+          <p>&copy; 2024 LUCERNA. Todos los derechos reservados.</p>
+      </div>
+  </div>
+</footer>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const avisosSwiper = new Swiper('.avisos-carrusel', {
+    loop: true,
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+  });
+</script>
+    
+  </body>
+</html>
+
+

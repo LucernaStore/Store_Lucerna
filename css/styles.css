@@ -1,0 +1,1291 @@
+/* Header fijo */
+@import url("https://fonts.cdnfonts.com/css/quesha");
+
+body {
+  font-family: "Quesha", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.colores {
+  color: rgba(81, 128, 102, 0.644);
+}
+
+header {
+  background-color: rgba(30, 46, 51, 0.818);
+  backdrop-filter: blur(15px);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el header esté siempre por encima */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo normal del contenedor */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo normal con sombra */
+.img-logo {
+  height: 80px;
+  filter: drop-shadow(
+    3px 5px 5px rgba(49, 49, 49, 0.7)
+  ); /* Sombra normal en el logo */
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Transición suave para la sombra y la opacidad */
+}
+
+/* Logo al hacer scroll: aplicar efectos adicionales para hacer visible el logo */
+header.scrolled .img-logo {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.8)) invert(1); /* Aumenta el contraste con sombra negra y resalta el contorno */
+  opacity: 0.9; /* Ajusta la opacidad para mejorar la visibilidad en fondo blanco */
+}
+
+/* Estilo para el menú */
+.menu {
+  display: flex;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.menu a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  font-size: clamp(1.5em, 1.5vw, 2.5em);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Línea tenue */
+}
+
+.menu a:hover {
+  background-color: #42645a;
+}
+
+.menu-icon {
+  display: none; /* Oculta el icono del menú por defecto */
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+  /* Contenedor del header en móvil */
+  .header-container {
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos estén en una fila */
+    justify-content: space-between; /* Alinea el logo a la izquierda y el menú a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px; /* Espacio alrededor del header */
+  }
+
+  /* Oculta el menú por defecto en móviles */
+  .menu {
+    display: none; /* Escondido por defecto en móviles */
+    flex-direction: column; /* Muestra los enlaces en una columna cuando se despliegan */
+    position: absolute; /* Posiciona el menú sobre el contenido */
+    top: 100%; /* Coloca el menú justo debajo del header */
+    left: 0; /* Alinea el menú al lado izquierdo */
+    right: 0; /* Hace que el menú ocupe todo el ancho disponible */
+    background-color: rgb(206, 206, 206); /* Fondo gris claro para el menú */
+    padding: 10px;
+    z-index: 999; /* Asegura que el menú esté sobre el resto del contenido */
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Sombra bajo el menú */
+  }
+
+  /* Muestra el icono del menú */
+  .menu-icon {
+    display: block; /* Muestra el icono del menú en pantallas pequeñas */
+    margin-left: auto; /* Coloca el icono del menú en el extremo derecho */
+  }
+
+  /* Estilo para mostrar el menú en móvil cuando se clickea el icono */
+  .menu.show {
+    display: flex; /* Muestra el menú cuando se añade la clase 'show' */
+  }
+
+  /* Estilo de los enlaces del menú en móvil */
+  .menu a {
+    color: black; /* Color de texto para los enlaces en móviles */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Separador entre elementos del menú */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  /* Último enlace sin borde inferior */
+  .menu a:last-child {
+    border-bottom: none; /* Elimina la línea divisoria para el último enlace */
+  }
+
+  /* Estilo para el logo en móvil */
+  .img-logo {
+    height: 50px;
+    filter: drop-shadow(
+      3px 5px 5px rgba(49, 49, 49, 0.7)
+    ); /* Sombra normal en el logo */
+    transition: filter 0.3s ease, opacity 0.3s ease; /* Transición suave para la sombra y la opacidad */
+  }
+
+  /* Logo al hacer scroll: aplicar efectos adicionales para hacer visible el logo */
+  header.scrolled .img-logo {
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.8)) invert(1); /* Aumenta el contraste con sombra negra y resalta el contorno */
+    opacity: 0.9; /* Ajusta la opacidad para mejorar la visibilidad en fondo blanco */
+  }
+}
+
+/* Estilo al hacer scroll */
+header.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); /* Sombra bajo el header */
+}
+
+header.scrolled .menu a {
+  color: black;
+  border: 1px solid rgba(90, 90, 90, 0.3); /* Línea tenue */
+}
+/* Sección "Acerca" */
+.content-acerca {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.container-img {
+  padding-top: 250px;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(
+      to bottom,
+      rgba(4, 125, 255, 0.3),
+      rgba(117, 117, 124, 0.3),
+      rgba(66, 66, 66, 0.2)
+    ),
+    url(../img/fondo1.png);
+  background-attachment: local;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  display: block;
+}
+.container-img {
+  transform-origin: center center; /* Centro para el efecto de zoom */
+  transition: transform 0.1s ease-out; /* Suaviza el efecto */
+}
+
+h3 {
+  text-align: center;
+  align-items: center;
+  color: #8a6565;
+}
+#flor {
+  color: rgb(110, 1, 131);
+}
+#citrico {
+  color: rgb(70, 139, 2);
+}
+#otono {
+  color: peru;
+}
+.aparecer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.aparecer-activo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#bold {
+  font-weight: bold;
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (max-width: 768px) {
+  .container-img {
+    height: 300px; /* Reducimos la altura para pantallas pequeñas */
+    background-attachment: scroll; /* Quitamos el fondo fijo en móviles */
+    background-size: cover; /* Mantener el ajuste de la imagen */
+  }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+  .container-img {
+    height: 250px; /* Reducimos aún más la altura para pantallas muy pequeñas */
+    background-position: top; /* Ajustamos la posición para centrar mejor la imagen */
+  }
+}
+
+.container-acerca {
+  display: flex;
+  align-items: flex-start; /* Alinea el contenido en la parte superior */
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+#acerca {
+  display: flex; /* Usamos flexbox para alinear elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.imagen-acerca {
+  width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  max-width: 400px; /* Limita el tamaño máximo de la imagen en tablets */
+  height: auto; /* Mantiene las proporciones correctas */
+  margin-right: 20px; /* Mantiene un margen consistente */
+  margin-top: 20px;
+}
+.imagen-acerca {
+  position: relative;
+  left: -100%; /* La imagen comienza fuera de la vista */
+  opacity: 0; /* Inicialmente invisible */
+  transition: left 2s ease-in-out, opacity 1s ease-in-out;
+}
+
+.imagen-acerca.visible {
+  left: 0; /* Se desliza a su posición final */
+  opacity: 1; /* Se hace visible */
+}
+
+/* Media query para tabletas (iPads) */
+@media (min-width: 700px) and (max-width: 1024px) {
+  .imagen-acerca {
+    width: 40%; /* Ajusta el tamaño de la imagen en iPads */
+    max-width: 600px; /* Limita el tamaño máximo */
+  }
+}
+
+/* Media query para pantallas menores a 700px (móviles) */
+@media (max-width: 700px) {
+  .imagen-acerca {
+    display: none; /* Oculta la imagen en dispositivos móviles */
+  }
+}
+
+.contenido-acerca {
+  flex: 1; /* Permite que el contenido ocupe el resto del espacio disponible */
+}
+
+.texto-j {
+  text-align: justify;
+}
+
+#acerca h2,
+#productos h2 {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #5b5b5b;
+}
+h3 {
+  text-align: center;
+  align-items: center;
+  color: #333;
+  font-size: 35px;
+}
+.titulos h2 {
+  text-align: center;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.curved-decoration {
+  display: block;
+  width: 100%; /* Ancho completo */
+  height: 30px; /* Altura del SVG */
+}
+
+#acerca p,
+#productos p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cart i {
+  font-size: 30px; /* Aumenta el tamaño del ícono del carrito */
+}
+
+.cart-count {
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 25px;
+  color: white;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: none; /* Ocultar el contador por defecto */
+}
+
+.cart-count.visible {
+  display: block; /* Mostrarlo cuando haya productos en el carrito */
+}
+
+.botonEliminar {
+  background-color: transparent;
+}
+/* checar esta parte despues
+.compras {
+  position: relative;
+  z-index: 1;
+}
+.compras::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to left, #faffce, #f8ffb9);
+  z-index: -1;
+}*/
+/*-------contenedor para precios-----------*/
+.producto-contenedor {
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.producto-contenedor img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+}
+
+.producto-texto {
+  margin: 8px 0;
+  color: #333;
+  font-size: 1.7em;
+}
+
+.producto-precio {
+  font-weight: bold;
+  font-size: 1.7em;
+  color: #e74c3c;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .producto-contenedor {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto-contenedor {
+    max-width: 90%;
+  }
+}
+/*-------2 imagenes en los productos-----------*/
+.producto-carrusel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.producto-vela {
+  width: 100%;
+  opacity: 0; /* Oculta todas las imágenes no activas */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.producto-vela.activo {
+  opacity: 1; /* Muestra solo la imagen activa */
+  position: relative;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.punto.activo {
+  background-color: #333;
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en nuevas filas */
+  gap: 20px; /* Espacio entre productos */
+  max-width: 90%; /* Ajuste completo al ancho de la pantalla */
+  margin: 40px auto; /* Centrado horizontal */
+  justify-content: center; /* Centra los elementos en la fila */
+}
+
+#productos > div {
+  flex: 0 1 calc(25% - 20px); /* 25% del ancho menos el espacio de gap */
+  box-sizing: border-box; /* Asegúrate de que el padding y el borde no afecten el tamaño total */
+}
+
+/* A partir de pantallas medianas (tabletas) mostrar 2 productos por fila */
+@media (min-width: 600px) {
+  #productos > div {
+    flex: 0 1 calc(50% - 20px); /* 50% del ancho menos el espacio de gap */
+  }
+}
+
+/* A partir de pantallas más grandes mostrar 3 productos por fila */
+@media (min-width: 900px) {
+  #productos > div {
+    flex: 0 1 calc(33.33% - 20px); /* 33.33% del ancho menos el espacio de gap */
+  }
+}
+
+/* En pantallas grandes (escritorios) mostrar 4 productos por fila */
+@media (min-width: 1200px) {
+  #productos > div {
+    flex: 0 1 calc(25% - 20px); /* 25% del ancho menos el espacio de gap */
+  }
+}
+.opciones {
+  width: 90%; /* Se hace responsivo */
+  max-width: 300px; /* Máximo ancho del select */
+  padding: 10px; /* Espacio interno */
+  margin: 10px 0; /* Espacio arriba y abajo */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+  font-size: 20px; /* Tamaño de fuente */
+  text-align: center;
+  font-family: "Quesha", sans-serif;
+}
+
+/* Opcional: Para mejorar la apariencia al pasar el mouse */
+.opciones:hover {
+  border-color: #888; /* Cambio de color del borde al pasar el mouse */
+}
+#cantidad {
+  width: 30px;
+  text-align: center;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  /* Ocultar flechas en navegadores compatibles */
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none; /* Chrome, Safari */
+  appearance: none; /* Estándar */
+}
+
+/* Para eliminar el borde en Firefox */
+#cantidad::-webkit-inner-spin-button,
+#cantidad::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cantidad-btn {
+  background-color: #161616;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cantidad-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.producto {
+  background: linear-gradient(
+    to top,
+    #ffffff98,
+    #ffffff
+  ); /* Fondo para destacar el producto */
+  padding-bottom: 5px;
+
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra suave */
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(50px); /* Se moverá hacia abajo */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Efecto de transición */
+  width: 300px;
+  height: auto;
+
+  font-size: clamp(1em, 1.5vw, 2em);
+}
+
+.producto img {
+  width: 100%;
+  height: auto; /* Hace que la imagen sea responsive */
+  max-height: 350px; /* Limita la altura máxima */
+  object-fit: cover; /* Cubre todo el área manteniendo la proporción */
+
+  display: block; /* Elimina espacios en línea que pueden causar espacio extra */
+}
+
+/* Estilos iniciales para los productos */
+.producto {
+  opacity: 0;
+  transform: scale(0.5); /* Comienza más pequeño */
+  transition: all 1s ease-in-out; /* Transición suave */
+}
+
+/* Efecto cuando el producto entra en el viewport */
+.producto.visible {
+  opacity: 1;
+  transform: scale(1); /* Crece hasta su tamaño original */
+}
+
+/* Centrar un solo producto */
+#productos:only-child {
+  justify-items: center; /* Centra el producto cuando hay solo uno */
+}
+
+#carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.4);
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es más grande que el área visible */
+  z-index: 10000;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
+  color: #363636;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+  display: none;
+  height: 100vh; /* Hace que el div ocupe toda la altura de la ventana */
+  max-height: 100vh; /* Limita la altura máxima a la altura de la ventana */
+}
+#carrito h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #363636;
+  padding-bottom: 5px;
+}
+#carrito {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.849),
+      rgba(255, 255, 255, 0.829),
+      rgba(255, 255, 255, 0.829)
+    ),
+    url(../img/carrito.png);
+  background-attachment: local;
+  background-position: center;
+  background-size: cover; /* Ajusta el ancho al 100% y la altura proporcionalmente */
+  background-repeat: no-repeat;
+}
+#checkout {
+  width: 40%;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#checkout {
+  background: #34a853;
+  transition: background 0.3s ease;
+}
+
+#checkout:hover {
+  background: #087260;
+}
+
+.header-carrito {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between; /* Asegura que el botón esté a la izquierda y el h2 a la derecha */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+#cerrar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #343434;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  transition: background-color 0.3s ease; /* Solo aplicamos transición al color de fondo */
+}
+
+#cerrar:hover {
+  background-color: #005661; /* Cambio de fondo */
+  color: whitesmoke; /* Color del texto */
+  transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Agrega sombra sutil */
+  border-radius: 50%; /* Mantiene el borde redondeado */
+  cursor: pointer; /* Muestra que es interactivo */
+}
+.decorado {
+  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+  text-align: center; /* Centra el texto */
+  margin: 0; /* Elimina el margen por defecto del h2 */
+}
+@media (max-width: 900px) {
+  #carrito {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  #carrito {
+    width: 100%;
+    padding: 0px; /* Reduce el padding en pantallas pequeñas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centra todo el contenido del carrito */
+  }
+}
+#total-compra {
+  border: 1px solid #bab9b9;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Controla el ancho, ajusta el valor según lo necesites */
+  max-width: 500px; /* Controla el ancho máximo para que no se expanda demasiado */
+  margin: 0 auto; /* Centra el elemento horizontalmente */
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+  background-color: #272f33;
+}
+#lista-carrito {
+  font-size: clamp(1em, 1.5vw, 2em);
+}
+
+@media (max-width: 600px) {
+  .producto {
+    padding: 5px; /* Reduce el padding general */
+    max-width: 50%; /* Ocupa todo el ancho disponible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Reduce la sombra */
+  }
+
+  .producto img {
+    max-height: 250px; /* Limita la altura de la imagen para ahorrar espacio */
+  }
+
+  #productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre los productos */
+    justify-content: center; /* Centrar los productos */
+  }
+
+  .producto {
+    flex: 1 1 calc(50% - 10px); /* Dos productos por fila */
+    max-width: calc(50% - 10px); /* Ajustar al espacio disponible */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+  }
+
+  .producto h2 {
+    margin: 5px 0; /* Reduce el margen del título */
+  }
+
+  .producto p {
+    margin: 5px 0; /* Reduce el margen del párrafo */
+  }
+
+  .opciones,
+  #cantidad,
+  .cantidad-btn {
+    font-size: 1.5em;
+    padding: 5px; /* Reduce el padding en los botones y selectores */
+  }
+  #productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 100%;
+  }
+}
+
+/* Estilo para pantallas grandes (PC) */
+@media (max-width: 800px) {
+  .producto {
+    padding: 5px; /* Reduce el padding general */
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Reduce la sombra */
+  }
+
+  .producto img {
+    max-height: 280px; /* Limita la altura de la imagen para ahorrar espacio */
+  }
+
+  .producto h2 {
+    margin: 5px 0; /* Reduce el margen del título */
+  }
+
+  .producto p {
+    margin: 5px 0; /* Reduce el margen del párrafo */
+  }
+
+  .opciones,
+  #cantidad,
+  .cantidad-btn {
+    font-size: 1.5em;
+    padding: 5px; /* Reduce el padding en los botones y selectores */
+  }
+}
+@media (max-width: 1024px) {
+  .producto {
+    padding: 5px; /* Reduce el padding general */
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Reduce la sombra */
+  }
+
+  .producto img {
+    max-height: 280px; /* Limita la altura de la imagen para ahorrar espacio */
+  }
+
+  .producto h2 {
+    margin: 5px 0; /* Reduce el margen del título */
+  }
+
+  .producto p {
+    margin: 5px 0; /* Reduce el margen del párrafo */
+  }
+
+  .opciones,
+  #cantidad,
+  .cantidad-btn {
+    font-size: 1.5em;
+    padding: 5px; /* Reduce el padding en los botones y selectores */
+  }
+}
+
+#contacto {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto; /* Espaciado entre secciones y centrado horizontal */
+  width: 50%; /* Ocupa el 50% del ancho del contenedor */
+}
+
+label {
+  font-size: 1.3em;
+  color: #333; /* Color gris oscuro */
+  margin-bottom: 0.5rem; /* Espacio debajo del label */
+}
+
+input[type="text"] {
+  padding: 0.75rem; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  font-size: 1rem; /* Tamaño de fuente */
+  text-align: center;
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+input[type="text"]:focus {
+  border-color: #303030; /* Color de borde al enfocar */
+  outline: none; /* Quitar el contorno por defecto */
+}
+
+input[type="text"]::placeholder {
+  color: #aaa; /* Color del texto del placeholder */
+}
+
+button {
+  background-color: #353837;
+  border-radius: 3px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0px;
+  margin-bottom: 10px; /* Espacio debajo del botón */
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Quesha", sans-serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.leer {
+  background-color: rgb(255, 60, 60) !important;
+}
+
+/* Efecto hover para el botón */
+button:hover {
+  background: linear-gradient(
+    30deg,
+    #ff0080,
+    #0077ff,
+    #9c27b0,
+    #ffeb3b
+  ); /* Gradiente tornasol */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Efecto de desplazamiento para el icono en el hover */
+button:hover i {
+  transform: translateY(-5px) rotate(-15deg); /* Desplaza y rota el icono */
+  transition: transform 0.2s ease; /* Transición suave para el icono */
+}
+
+button:active {
+  transform: scale(0.95); /* Disminuye ligeramente el tamaño al hacer clic */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Reduce la sombra al hacer clic */
+}
+
+#footer {
+  background-color: #f8f9fa; /* Color de fondo */
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 112, 62, 0.9); /* Sombra en la parte superior */
+  position: relative; /* Mantiene el footer en la parte inferior */
+  bottom: 0; /* Se asegura que esté en la parte inferior */
+  left: 0;
+  right: 0; /* Ocupa todo el ancho */
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.logo {
+  height: 100px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+}
+
+.separator {
+  height: 100px; /* Altura de la línea */
+  width: 3px; /* Ancho de la línea */
+  background: linear-gradient(
+    45deg,
+    #ff0080,
+    #00bfff,
+    #9c27b0,
+    #ffeb3b
+  ); /* Gradiente tornasol */
+  margin: 0 20px; /* Espacio a los lados */
+  border-radius: 2px;
+
+  font-size: clamp(1em, 1.5vw, 2em);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  font-size: clamp(1em, 1.5vw, 1em);
+}
+
+.social-media {
+  margin-bottom: 5px;
+  z-index: 9999; /* Asegúrate de que esté detrás del contenido del footer */
+  font-size: clamp(1em, 1.5vw, 1em);
+}
+
+.social-icon {
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 30px; /* Tamaño de los íconos */
+  color: #202022; /* Color de los íconos */
+
+  z-index: 9999; /* Asegúrate de que esté detrás del contenido del footer */
+  font-size: clamp(2em, 1.5vw, 1em);
+}
+.social-icon {
+  display: inline-flex; /* Asegura que el icono mantenga su tamaño */
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Ajusta según el tamaño de tu icono */
+  height: 50px; /* Ajusta según el tamaño de tu icono */
+  border-radius: 50%; /* Para hacerlo circular */
+
+  background: transparent; /* Fondo inicial transparente */
+}
+
+.social-icon:hover {
+  transform: scale(1); /* Escala el icono */
+  background: linear-gradient(
+    45deg,
+    #8b0051,
+    #ff0080,
+    #00bfff,
+    #9c27b0,
+    #ffeb3b
+  ); /* Gradiente tornasol */
+  z-index: 9999; /* Eleva el icono */
+  color: #fff;
+}
+
+.contact {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el icono y el texto */
+  z-index: 9999; /* Asegúrate de que esté detrás del contenido del footer */
+  font-size: clamp(2em, 1.5vw, 3em);
+}
+.blog {
+  font-size: clamp(2em, 1.5vw, 1.5em);
+  font-weight: bold;
+  color: #2e2e2e;
+}
+.blog {
+  font-size: 20px; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Opcional: resaltar texto */
+  position: relative; /* Necesario para posicionar ::after */
+  display: inline-block; /* Asegura que la línea no ocupe todo el ancho */
+  cursor: pointer; /* Cambia el cursor al pasar */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Efectos suaves */
+}
+
+.blog:hover {
+  transform: scale(1.1); /* Amplía ligeramente el texto */
+
+  color: rgb(255, 51, 78); /* Cambia el color del texto */
+}
+
+.blog::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #2e2e2e;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact p {
+  margin: 0;
+  font-size: clamp(2em, 1.5vw, 3em);
+}
+.footer-copyright {
+  color: #161616;
+  font-size: clamp(2em, 1.5vw, 3em);
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinea a la izquierda */
+  }
+
+  .separator {
+    display: none; /* Oculta la línea separadora en pantallas pequeñas */
+  }
+
+  .social-media {
+    margin-bottom: 10px; /* Espacio adicional en dispositivos pequeños */
+  }
+
+  .logo {
+    height: 80px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
+
+  .footer-copyright {
+    align-items: center;
+    text-align: center !important;
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espacio arriba del texto */
+    background-color: #272f33;
+    color: white !important;
+  }
+  /* O si prefieres alinearlos juntos sin margen */
+  .blog,
+  .contact {
+    text-align: right;
+    margin-right: 10px; /* Espacio lateral opcional */
+  }
+}
+.redes {
+  color: #343434;
+  font-size: clamp(2em, 1vw, 1em);
+  font-weight: bolder;
+}
+
+.contact a {
+  position: relative; /* Asegúrate de que el enlace tenga un contexto de posición */
+  color: rgb(41, 41, 41);
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 4px; /* Añadir un pequeño padding para que no se superponga */
+  font-size: 25px;
+}
+
+.contact a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Alinea en la parte inferior del enlace */
+  width: 100%;
+  height: 2px;
+  background: rgb(26, 130, 62);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.contact a:hover::after {
+  transform: scaleX(1);
+}
+.contact i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .contact a {
+    font-size: 25px;
+  }
+}
+
+.contact i {
+  color: rgb(43, 70, 63);
+  align-items: center;
+  text-align: center;
+}
+
+.footer-copyright {
+  text-align: right; /* Alinea el texto a la derecha */
+  margin-top: 20px; /* Espacio arriba del texto */
+  font-size: 19px; /* Tamaño de fuente */
+  color: #343434; /* Color del texto */
+}
+h4 {
+  text-align: center;
+  align-items: center;
+}
+
+#avisos {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.avisos-carrusel {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto; /* Ajuste automático de altura para evitar distorsión */
+  object-fit: cover; /* Mantener la proporción de la imagen */
+  border-radius: 0; /* Eliminar el borde redondeado si se desea */
+}
+
+@media (max-width: 768px) {
+  #avisos {
+    padding: 0 15px;
+  }
+
+  .avisos-carrusel {
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+  }
+
+  .swiper-slide img {
+    height: 300px; /* Ajustar la altura de las imágenes en pantallas pequeñas */
+  }
+}
+
+/*-----------------------Sección para el blog---------------------------------------*/
+
+.blog-content {
+  padding: 20px;
+}
+
+.featured-news,
+.recent-news {
+  margin-bottom: 40px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.news-item,
+.featured-item {
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  background-color: #f9f9f9;
+  text-align: center;
+  overflow: hidden;
+}
+
+.news-item img,
+.featured-item img {
+  width: 100%;
+  height: auto;
+}
+
+.read-more-btn {
+  background-color: rgb(255, 60, 60);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.news-detail {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.news-detail img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sección Destacada */
+.featured-news {
+  margin-bottom: 40px;
+}
+
+.featured-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
+}
+
+.featured-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.featured-content {
+  max-width: 600px;
+  width: 100%; /* Asegura que se ajuste al 100% del contenedor en pantallas pequeñas */
+}
+
+.featured-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(255, 60, 60);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+.read-more:hover {
+  transform: scale(1);
+  background: linear-gradient(
+    45deg,
+    #8b0051,
+    #ff0080,
+    #00bfff,
+    #9c27b0,
+    #ffeb3b
+  );
+}
+
+.featured-content {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.full-content {
+  margin-top: 10px;
+}
+
+.img-news {
+  height: 100px;
+}
+
+/* Consultas de medios para hacer responsivo */
+@media (max-width: 768px) {
+  .featured-content h2 {
+    font-size: 20px;
+  }
+
+  .read-more-btn {
+    padding: 8px 16px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-item {
+    flex-direction: column; /* Apila los elementos verticalmente en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .featured-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-content {
+    padding: 10px;
+  }
+
+  .featured-content h2 {
+    font-size: 18px;
+  }
+
+  .read-more-btn {
+    padding: 6px 12px;
+  }
+
+  .img-news {
+    height: 80px;
+  }
+}
